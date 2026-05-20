@@ -54,15 +54,15 @@ def retrieve(query: str, top_k: int = TOP_K) -> list[tuple[float, dict]]:
 
     return results
 
-query = "What is attention in transformers?"
-results = retrieve(query)
+if __name__ == "__main__":
+    query = "What is attention in transformers?"
+    results = retrieve(query)
+    print(f"\nQuery: {query}\n")
 
-print(f"\nQuery: {query}\n")
-
-for score, chunk in results:
-    print(f"Score: {score:.4f} | Source: {chunk['source']}")
-    print(f"{chunk['text'][:200]}...")
-    print()
+    for score, chunk in results:
+        print(f"Score: {score:.4f} | Source: {chunk['source']}")
+        print(f"{chunk['text'][:200]}...")
+        print()
 
 
 
